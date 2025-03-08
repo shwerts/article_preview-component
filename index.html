@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="sanitize/sanitize.css">
+  <link rel="stylesheet" href="sanitize/assets.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Article preview component</title>
 
@@ -16,21 +24,30 @@
 </head>
 <body>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <article class="container">
+    <img class="article__image" src="images/drawers.jpg" alt="drawers">
+    <div class="article__content">
+      <h1 class="article__heading">
+        Shift the overall look and feel by adding these wonderful
+        touches to furniture in your home
+      </h1>
+      <p>
+        Ever been in a room and felt like something was missing? Perhaps
+        it felt slightly bare and uninviting. I’ve got some simple tips
+        to help you make any room feel complete.
+      </p>
+    </div>
+    <div class="article__footer">
+      <div class="article__author">
+        <img src="images/avatar-michelle.jpg" alt="Author's avatar">
+        <p>
+          <span>Michelle Appleton</span><br>
+          <time datetime="2020-06-28">28 Jun 2020</time>
+        </p>
+      </div>
+      <button class="article__shareBtn" type="button"></button>
+    </div>
+  </article>
+  <script defer src="script.js"></script>
 </body>
 </html>
