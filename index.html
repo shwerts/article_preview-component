@@ -25,37 +25,43 @@
 <body>
 
   <article class="container">
-    <img class="article__image" src="images/drawers.jpg" alt="drawers">
-    <div class="article__content">
-      <h1 class="article__heading">
-        Shift the overall look and feel by adding these wonderful
-        touches to furniture in your home
-      </h1>
-      <p>
-        Ever been in a room and felt like something was missing? Perhaps
-        it felt slightly bare and uninviting. I’ve got some simple tips
-        to help you make any room feel complete.
-      </p>
-    </div>
-    <div class="article__footer">
-      <div class="article__author">
-        <img src="images/avatar-michelle.jpg" alt="Author's avatar">
+    <img class="article__image"
+      src="images/drawers-mobile.jpg"
+      alt="drawers"
+      srcset="images/drawers-mobile.jpg 300w,
+      images/drawers-desktop.jpg 700w">
+    <div>
+      <div class="article__content">
+        <h1 class="article__heading">
+          Shift the overall look and feel by adding these wonderful
+          touches to furniture in your home
+        </h1>
         <p>
-          <span>Michelle Appleton</span><br>
-          <time datetime="2020-06-28">28 Jun 2020</time>
+          Ever been in a room and felt like something was missing? Perhaps
+          it felt slightly bare and uninviting. I’ve got some simple tips
+          to help you make any room feel complete.
         </p>
       </div>
-      <div class="article__links">
-        <span>Share</span>
-        <a href="#" class="links__facebook"></a>
-        <a href="#" class="links__twitter"></a>
-        <a href="#" class="links__pinterest"></a>
+      <div class="article__footer">
+        <div class="article__author">
+          <img src="images/avatar-michelle.jpg" alt="Author's avatar">
+          <p>
+            <span>Michelle Appleton</span><br>
+            <time datetime="2020-06-28">28 Jun 2020</time>
+          </p>
+        </div>
+        <div class="article__links">
+          <span>Share</span>
+          <a href="#" class="links__facebook"></a>
+          <a href="#" class="links__twitter"></a>
+          <a href="#" class="links__pinterest"></a>
+        </div>
+        <button class="article__shareBtn" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+            <path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
+          </svg>
+        </button>
       </div>
-      <button class="article__shareBtn" type="button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
-          <path fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/>
-        </svg>
-      </button>
     </div>
   </article>
   <script defer src="script.js"></script>

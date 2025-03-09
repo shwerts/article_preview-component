@@ -4,14 +4,16 @@ let articleLinks = document.querySelector('.article__links');
 let shareBtn = document.querySelector('.article__shareBtn');
 let shareBtnSVG = shareBtn.querySelector('svg');
 
-shareBtn.addEventListener('click', function() {
+shareBtn.addEventListener('click', mobileLayout);
+
+function mobileLayout() {
   switch (authorBlock.style.display) {
     case 'none':
       authorBlock.style.display = 'flex';
 
       articleLinks.style.display = 'none';
       
-      articleFooter.style.backgroundColor = '#fff';
+      articleFooter.style.backgroundColor = 'transparent';
       articleFooter.style.paddingBlockStart = '10px';
 
       shareBtn.style.backgroundColor = 'hsl(210, 46%, 95%)';
@@ -28,4 +30,4 @@ shareBtn.addEventListener('click', function() {
       shareBtn.style.backgroundColor = 'hsl(214, 17%, 51%)';
       shareBtnSVG.firstElementChild.setAttribute('fill', '#fff');
   }
-});
+}
