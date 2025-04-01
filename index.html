@@ -25,11 +25,12 @@
 <body>
 
   <article class="container">
-    <img class="article__image"
-      src="images/drawers-mobile.jpg"
-      alt="drawers"
-      srcset="images/drawers-mobile.jpg 300w,
-      images/drawers-desktop.jpg 700w">
+    <picture class="article__image">
+      <source srcset="images/drawers-desktop.jpg" media="(min-width: 768px)">
+      <img class="article__image"
+        src="images/drawers-mobile.jpg"
+        alt="drawers">
+    </picture>
     <div>
       <div class="article__content">
         <h1 class="article__heading">

@@ -36,6 +36,7 @@ body {
 }
 
 .article__footer {
+  position: relative;
   color: hsl(212, 23%, 69%);
   padding: 10px 32px 16px;
   margin-block-start: 20px;
@@ -70,18 +71,23 @@ body {
   cursor: pointer;
   background-color: hsl(210, 46%, 95%);
 }
+.article__shareBtn svg path {fill: #6E8098;}
+.article__shareBtn.active {background: hsl(214, 17%, 51%);}
+.article__shareBtn.active svg path {fill: #fff;}
 
 .article__links {
   display: none;
+  background: hsl(217, 19%, 35%);
+  position: relative;
   align-items: center;
   justify-content: center;
   gap: 16px;
 }
-.article__links span:first-child {
+.article__links span {
   text-transform: uppercase;
   letter-spacing: 5px;
 }
-.article__links span ~ * {
+.article__links a {
   inline-size: 20px;
   block-size: 20px;
 }
@@ -95,11 +101,33 @@ body {
     flex-direction: row;
   }
   .article__image {
-    max-block-size: 272px;
+    max-block-size: 300px;
     max-inline-size: none;
     border-radius: 10px 0 0 10px;
   }
-  .article__heading {
-    font-size: 1.5rem;
+  .article__heading {font-size: clamp(1.2rem, 1.7rem, 2.4rem)}
+  .article__content {
+    padding-inline: 40px;
+    font-size: clamp(1rem, 1.15rem, 2rem);
+  }
+  .article__links {
+    position: absolute;
+    inline-size: 250px;
+    padding: 16px;
+    bottom: 130%;
+    left: 62%;
+    margin-inline-start: 2.5px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  .article__links::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -12px;
+    border-width: 12px;
+    border-style: solid;
+    border-color: hsl(217, 19%, 35%) transparent transparent transparent;
   }
 }

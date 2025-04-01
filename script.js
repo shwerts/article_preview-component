@@ -4,7 +4,13 @@ let articleLinks = document.querySelector('.article__links');
 let shareBtn = document.querySelector('.article__shareBtn');
 let shareBtnSVG = shareBtn.querySelector('svg');
 
-shareBtn.addEventListener('click', mobileLayout);
+switch (document.documentElement.clientWidth > 768) {
+  case false:
+    shareBtn.addEventListener('click', mobileLayout);
+    break;
+  default:
+    shareBtn.addEventListener('click', desktopLayout);
+}
 
 function mobileLayout() {
   switch (authorBlock.style.display) {
@@ -16,8 +22,7 @@ function mobileLayout() {
       articleFooter.style.backgroundColor = 'transparent';
       articleFooter.style.paddingBlockStart = '10px';
 
-      shareBtn.style.backgroundColor = 'hsl(210, 46%, 95%)';
-      shareBtnSVG.firstElementChild.setAttribute('fill', '#6E8098');
+      shareBtn.classList.remove('active');
       break;
     default:
       authorBlock.style.display = 'none';
@@ -27,7 +32,20 @@ function mobileLayout() {
       articleFooter.style.backgroundColor = 'hsl(217, 19%, 35%)';
       articleFooter.style.paddingBlockStart = '16px';
 
-      shareBtn.style.backgroundColor = 'hsl(214, 17%, 51%)';
-      shareBtnSVG.firstElementChild.setAttribute('fill', '#fff');
+      shareBtn.classList.add('active');
+  }
+}
+
+function desktopLayout() {
+  switch (articleLinks.style.display) {
+    case 'flex':
+      articleLinks.style.display = 'none';
+
+      shareBtn.classList.remove('active');
+      break;
+    default:
+      articleLinks.style.display = 'flex';
+
+      shareBtn.classList.add('active');
   }
 }
