@@ -123,12 +123,11 @@ body {
     text-align: center;
     border-radius: 8px;
   }
-  .article__links::after {
-    content: " ";
+  .article__links__pointer {
     position: absolute;
     top: 100%; /* At the bottom of the tooltip */
-    left: 50%;
-    margin-left: -12px;
+    right: 115px;
+    margin-right: -12px;
     border-width: 12px;
     border-style: solid;
     border-color: hsl(217, 19%, 35%) transparent transparent transparent;

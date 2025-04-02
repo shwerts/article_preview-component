@@ -1,10 +1,11 @@
 let articleFooter = document.querySelector('.article__footer');
-let authorBlock = document.querySelector('.article__author');
+let authorBlock = articleFooter.querySelector('.article__author');
 
 // Tooltip in desktop
-let articleLinks = document.querySelector('.article__links');
+let articleLinks = articleFooter.querySelector('.article__links');
+let articleLinksPointer = document.querySelector('.article__links__pointer');
 
-let shareBtn = document.querySelector('.article__shareBtn');
+let shareBtn = articleFooter.querySelector('.article__shareBtn');
 let shareBtnSVG = shareBtn.querySelector('svg');
 
 if (document.documentElement.clientWidth < 768)
@@ -44,9 +45,11 @@ function desktopLayout() {
       articleLinks.style.display = 'flex';
       if (articleLinks.getBoundingClientRect().right > document.documentElement.clientWidth) {
         let overflowEdge = articleLinks.getBoundingClientRect().right - document.documentElement.clientWidth;
+
         articleLinks.style.right = parseInt(getComputedStyle(articleLinks).right) + overflowEdge + 16 + 'px';
+
+        articleLinksPointer.style.right = parseFloat(getComputedStyle(articleLinksPointer).right) - overflowEdge - 16 + 'px';
       }
-      // console.log(left, right);
 
       shareBtn.classList.add('active');
   }
