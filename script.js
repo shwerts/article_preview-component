@@ -1,16 +1,15 @@
 let articleFooter = document.querySelector('.article__footer');
 let authorBlock = document.querySelector('.article__author');
+
+// Tooltip in desktop
 let articleLinks = document.querySelector('.article__links');
+
 let shareBtn = document.querySelector('.article__shareBtn');
 let shareBtnSVG = shareBtn.querySelector('svg');
 
-switch (document.documentElement.clientWidth > 768) {
-  case false:
-    shareBtn.addEventListener('click', mobileLayout);
-    break;
-  default:
-    shareBtn.addEventListener('click', desktopLayout);
-}
+if (document.documentElement.clientWidth < 768)
+  shareBtn.addEventListener('click', mobileLayout);
+  else shareBtn.addEventListener('click', desktopLayout);
 
 function mobileLayout() {
   switch (authorBlock.style.display) {
@@ -19,8 +18,7 @@ function mobileLayout() {
 
       articleLinks.style.display = 'none';
       
-      articleFooter.style.backgroundColor = 'transparent';
-      articleFooter.style.paddingBlockStart = '10px';
+      articleFooter.classList.remove('links')
 
       shareBtn.classList.remove('active');
       break;
@@ -29,8 +27,7 @@ function mobileLayout() {
 
       articleLinks.style.display = 'flex';
 
-      articleFooter.style.backgroundColor = 'hsl(217, 19%, 35%)';
-      articleFooter.style.paddingBlockStart = '16px';
+      articleFooter.classList.add('links');
 
       shareBtn.classList.add('active');
   }
@@ -45,6 +42,11 @@ function desktopLayout() {
       break;
     default:
       articleLinks.style.display = 'flex';
+      if (articleLinks.getBoundingClientRect().right > document.documentElement.clientWidth) {
+        let overflowEdge = articleLinks.getBoundingClientRect().right - document.documentElement.clientWidth;
+        articleLinks.style.right = parseInt(getComputedStyle(articleLinks).right) + overflowEdge + 16 + 'px';
+      }
+      // console.log(left, right);
 
       shareBtn.classList.add('active');
   }

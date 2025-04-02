@@ -45,6 +45,10 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.article__footer.links {
+  background: hsl(217, 19%, 35%);
+  padding-block-start: 16px;
+}
 
 .article__author {
   display: flex;
@@ -112,11 +116,10 @@ body {
   }
   .article__links {
     position: absolute;
-    inline-size: 250px;
+    inline-size: 230px;
     padding: 16px;
     bottom: 130%;
-    left: 62%;
-    margin-inline-start: 2.5px;
+    right: -67px;
     text-align: center;
     border-radius: 8px;
   }
